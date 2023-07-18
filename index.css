@@ -5,11 +5,19 @@ body {
   margin: 0;
   font-family: 'Noto Sans', sans-serif;
 }
+
 main {
   padding: 3rem;
 }
-.expense-form {
+
+.expense-form,
+.input-container,
+.expense-table,
+.row {
   display: flex;
+}
+
+.expense-form {
   align-items: end;
   gap: 1rem;
 }
@@ -18,7 +26,6 @@ label {
 }
 .input-container {
   position: relative;
-  display: flex;
   flex-direction: column;
   gap: 5px;
 }
@@ -32,14 +39,25 @@ label {
   width: 100%;
   content: attr(error);
 }
+input,
+#add,
+#expense-table {
+  border: 2px solid black;
+}
+input {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+#add {
+  border-radius: 3px;
+}
 
 #expense-table {
-  display: flex;
   flex-direction: column;
   gap: 20px;
   width: fit-content;
   margin-top: 3rem;
-  border: 2px solid black;
   border-radius: 20px;
   padding: 1rem;
   background-color: #d3d3d3;
@@ -64,7 +82,6 @@ label {
   width: 200px;
 }
 .row {
-  display: flex;
   align-items: center;
   gap: 1rem;
   text-align: left;
