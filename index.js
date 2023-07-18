@@ -12,6 +12,15 @@ function validateAmount(amount) {
   }
   return Number(amount);
 }
+
+function displayError(input, message) {
+  const parent_div = input.parent();
+  parent_div.attr('error', `${message}`);
+  setTimeout(() => {
+    parent_div.attr('error', '');
+  }, 2000);
+}
+
 let sum = 0;
 $(document).ready(() => {
   $('#add').click(() => {
