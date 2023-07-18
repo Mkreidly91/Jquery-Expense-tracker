@@ -26,8 +26,15 @@ $(document).ready(() => {
     } else {
       const item = $(entry(expense, amount));
       $('#expenses-container').append(item);
+      item.find('.delete').click(function () {
+        console.log('delete');
+        sum -= item.find('.entry-value').val();
+        item.remove();
+        sum -= amount;
+        $('#total').text(sum);
+      });
+      sum += amount;
+      $('#total').text(sum);
     }
-    sum += amount;
-    $('#total').text(sum);
   });
 });
